@@ -13,7 +13,6 @@ public class EffectRegistry {
     public static final RegistryObject<Effect> BLESS_OF_DARK_ELF = EFFECTS.register("bless_of_dark_elf", BlessOfDarkElf::new);
     public static final RegistryObject<Effect> CURSE_OF_SERPENT = EFFECTS.register("curse_of_serpent", CurseOfSerpent::new);
     public static final RegistryObject<Effect> BIG_FIERCE_ONE = EFFECTS.register("big_fierce_one", BigFierceOne::new);
-    public static final RegistryObject<Effect> BIG_MOE_ONE = EFFECTS.register("big_moe_one", BigMoeOne::new);
     public static final RegistryObject<Effect> OVERLOAD = EFFECTS.register("overload", Overload::new);
     public static final RegistryObject<Effect> HOLINESS = EFFECTS.register("holiness", Holiness::new);
     public static final RegistryObject<Effect> BLEEDING = EFFECTS.register("bleeding", Bleeding::new);

@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " b ",
+        "bab",
+        " b "
+    ],
+    "key": {
+        "a": {
+            "item": "noodlesapex:legend_core"
+        },
+        "b": {
+            "item": "minecraft:obsidian"
+        }
+    },
+    "result": {
+        "item": "providencraft:kurumi_boomerang",
+        "count": 4
+    },
+    "conditions": [
+        {
+          "modid": "noodlesapex",
+          "type": "forge:mod_loaded"
+        }
+    ]
+}

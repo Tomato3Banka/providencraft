@@ -63,33 +63,6 @@ public class VillagerInit {
     }
 
     public static void fillTradeData() {
-        VillagerTrades.ITrade[] elifausLevel1 = new VillagerTrades.ITrade[]{
-                new EmeraldForItemsTrade(ItemRegistry.RED_AHOGE.get(), 6, 10, 2),
-                new EmeraldForItemsTrade(ItemRegistry.WHITE_AHOGE.get(), 6, 10, 2),
-                new ItemsForEmeraldsTrade(Items.APPLE, 1, 4, 10, 2)
-        };
-        VillagerTrades.ITrade[] elifausLevel2 = new VillagerTrades.ITrade[]{
-                new ItemsForEmeraldsTrade(ItemRegistry.LUCIA_RICE_CAKE.get(), 2, 5, 8, 4),
-                new ItemsForEmeraldsTrade(Items.CAKE, 3, 1, 10),
-                new ItemsForEmeraldsTrade(ItemRegistry.UNI_MILLET.get(), 3, 4, 10, 5)
-        };
-        VillagerTrades.ITrade[] elifausLevel3 = new VillagerTrades.ITrade[]{
-                new ItemsForEmeraldsTrade(ItemRegistry.WHITE_DOUBLE_AHOGE.get(), 5, 1, 12, 4),
-                new EmeraldForItemsTrade(ItemRegistry.MAGIC_BOOK.get(), 1, 10, 5),
-                new ItemsForEmeraldsTrade(ItemRegistry.BANANA_MILK.get(), 2, 3, 20, 6)
-        };
-        VillagerTrades.ITrade[] elifausLevel4 = new VillagerTrades.ITrade[]{
-                new ItemsForEmeraldsTrade(ItemRegistry.FLAT_VEGETABLE_CHESTPLATE.get(), 30, 1, 3, 30),
-                new EmeraldForItemsTrade(ItemRegistry.LOTUS_POTATO.get(), 3, 10, 3),
-                new ItemsForEmeraldsTrade(ItemRegistry.FROG_LEG.get(), 3, 2, 3)
-        };
-        VillagerTrades.ITrade[] elifausLevel5 = new VillagerTrades.ITrade[]{
-                new ItemsForEmeraldsTrade(ItemRegistry.PLUNGER.get(), 20, 1, 5, 20),
-                new ItemsForEmeraldsTrade(ItemRegistry.TARO_ICE_CREAM.get(), 4, 1, 16, 5)
-        };
-
-        VillagerTrades.VILLAGER_DEFAULT_TRADES.put(ELIFAUS.get(),
-                gatAsIntMap(ImmutableMap.of(1, elifausLevel1, 2, elifausLevel2, 3, elifausLevel3, 4, elifausLevel4, 5, elifausLevel5)));
 
         VillagerTrades.ITrade[] ruozhiLevel1 = new VillagerTrades.ITrade[]{
                 new EmeraldForItemsTrade(Items.IRON_INGOT, 6, 10, 3),
@@ -100,21 +73,6 @@ public class VillagerInit {
                 new EmeraldForItemsTrade(Items.REDSTONE, 15, 10, 5),
                 new ItemsForEmeraldsTrade(Items.STICKY_PISTON, 7, 1, 5)
         };
-        VillagerTrades.ITrade[] ruozhiLevel3 = new VillagerTrades.ITrade[]{
-                new EmeraldForItemsTrade(ItemRegistry.LAVA_CAKE.get(), 1, 2, 30),
-                new ItemsForEmeraldsTrade(ItemRegistry.PORCELAIN_THRONE.get(), 8, 1, 10)
-        };
-        VillagerTrades.ITrade[] ruozhiLevel4 = new VillagerTrades.ITrade[]{
-                new EmeraldForItemsTrade(Items.SMOOTH_STONE, 10, 30, 1),
-                new ItemsForEmeraldsTrade(ItemRegistry.ELIBOARD.get(), 3,8, 16, 3)
-        };
-        VillagerTrades.ITrade[] ruozhiLevel5 = new VillagerTrades.ITrade[]{
-                new ItemsForEmeraldsTrade(ItemRegistry.ELECTRIC_HORN.get(), 50, 1, 1, 35),
-                new ItemsForPointsTrade(ItemRegistry.AUDIO_TAPE_ELIFAUS.get(), 24, 1, 1, 3, 50)
-        };
-
-        VillagerTrades.VILLAGER_DEFAULT_TRADES.put(RUOZHI.get(),
-                gatAsIntMap(ImmutableMap.of(1, ruozhiLevel1, 2, ruozhiLevel2, 3, ruozhiLevel3, 4, ruozhiLevel4, 5, ruozhiLevel5)));
     }
 
     private static Int2ObjectMap<VillagerTrades.ITrade[]> gatAsIntMap(ImmutableMap<Integer, VillagerTrades.ITrade[]> p_221238_0_) {
@@ -187,38 +145,4 @@ public class VillagerInit {
         }
     }
 
-    static class ItemsForPointsTrade implements VillagerTrades.ITrade{
-        private final ItemStack sellingItem;
-        private final int pointsCount;
-        private final int premiumPointsCount;
-        private final int sellingItemCount;
-        private final int maxUses;
-        private final int xpValue;
-        private final float priceMultiplier;
-
-        public ItemsForPointsTrade(ItemStack sellingItem, int pointsCount, int premiumPointsCount, int sellingItemCount, int maxUses, int xpValue, float priceMultiplier) {
-            this.sellingItem = sellingItem;
-            this.pointsCount = pointsCount;
-            this.premiumPointsCount = premiumPointsCount;
-            this.sellingItemCount = sellingItemCount;
-            this.maxUses = maxUses;
-            this.xpValue = xpValue;
-            this.priceMultiplier = priceMultiplier;
-        }
-
-        public ItemsForPointsTrade(Item sellingItem, int pointsCount, int premiumPointsCount,int sellingItemCount, int maxUses, int xpValue){
-            this(new ItemStack(sellingItem), pointsCount, premiumPointsCount, sellingItemCount, maxUses, xpValue);
-        }
-
-        public ItemsForPointsTrade(ItemStack sellingItem, int pointsCount, int premiumPointsCount, int sellingItemCount, int maxUses, int xpValue) {
-            this(sellingItem, pointsCount, premiumPointsCount, sellingItemCount, maxUses, xpValue, 0.00F);
-        }
-
-        @Nullable
-        @Override
-        public MerchantOffer getOffer(Entity trader, Random rand) {
-            return new MerchantOffer(new ItemStack(ItemRegistry.PREMIUM_PDC_POINT.get(), this.premiumPointsCount), new ItemStack(ItemRegistry.PDC_POINT.get(), this.pointsCount),
-                    new ItemStack(this.sellingItem.getItem(), this.sellingItemCount), this.maxUses, this.xpValue, this.priceMultiplier);
-        }
-    }
 }

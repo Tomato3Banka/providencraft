@@ -12,8 +12,4 @@ public class UniMilletBlock extends CropsBlock {
         super(AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.CROP));
     }
 
-    @Override
-    protected IItemProvider getSeedsItem() {
-        return ItemRegistry.UNI_MILLET.get();
-    }
 }

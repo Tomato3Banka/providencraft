@@ -20,24 +20,6 @@ import java.awt.*;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class SpecialRender {
-    @SubscribeEvent
-    public static void renderWorldLastEvent(RenderWorldLastEvent evt) {
-        MomoPhoneRenderer.render(evt);
-        MountainDestroyerRenderer.render(evt);
-        LeviyRenderer.render(evt);
-    }
-
-    @SubscribeEvent
-    public static void renderOverlay(RenderGameOverlayEvent evt) {
-        NiitCarRenderer.render(evt);
-        YeggyPearlRenderer.render(evt);
-        WorldPeaceStaffRenderer.render(evt);
-    }
-
-    @SubscribeEvent
-    public static void cameraShake(EntityViewRenderEvent.CameraSetup event) {
-        LeviyRenderer.shake(event);
-    }
 
     public static void drawNumber(Matrix4f matrix, int level, int left, int top, int num, int color) {
         switch (num) {

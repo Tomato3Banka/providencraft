@@ -14,6 +14,6 @@ public class ProvidencraftGroup extends ItemGroup {
     @Override
     @Nonnull
     public ItemStack createIcon() {
-        return new ItemStack(ItemRegistry.RED_AHOGE.get());
+        return new ItemStack(ItemRegistry.HARANO_LOG.get());
     }
 }

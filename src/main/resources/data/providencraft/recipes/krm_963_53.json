@@ -1,0 +1,38 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "abc",
+        "ded",
+        "fff"
+    ],
+    "key": {
+        "a": {
+            "item": "minecraft:porkchop"
+        },
+        "b": {
+            "item": "providencraft:kurumi_halo"
+        },
+        "c": {
+            "item": "providencraft:kurumi_boomerang"
+        },
+        "d": {
+            "item": "providencraft:plunger"
+        },
+        "e": {
+            "item": "minecraft:elytra"
+        },
+        "f": {
+            "item": "noodlesapex:family_piece"
+        }
+    },
+    "result": {
+        "item": "providencraft:krm_963_53",
+        "count": 1
+    },
+    "conditions": [
+        {
+          "modid": "noodlesapex",
+          "type": "forge:mod_loaded"
+        }
+    ]
+}

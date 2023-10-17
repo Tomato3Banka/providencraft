@@ -16,29 +16,11 @@ import tech.lq0.providencraft.init.TileEntityRegistry;
 public class ClientEventHandler {
     @SubscribeEvent
     public static void onClientSetUpEvent(FMLClientSetupEvent event) {
-        RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.AHOGE_BOOMERANG_ENTITY.get(), AhogeBoomerangEntityRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.PLUNGER_ENTITY.get(), PlungerEntityRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.SEAT_ENTITY.get(), SeatEntityRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.DAIFUKU_SYRUP_ENTITY.get(), DaifukuSyrupEntityRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.FLUFF_BALL_ENTITY.get(), FluffBallEntityRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.KURUMI_BOOMERANG_ENTITY.get(), KurumiBoomerangEntityRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.WHITE_AHOGE_ENTITY.get(), WhiteAhogeEntityRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.NIIT_CAR_ENTITY.get(), NiitCarEntityRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.GOOD_MAN_CARD_ENTITY.get(), GoodManCardEntityRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.WATER_CARD_ENTITY.get(), WaterCardEntityRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.BLOOD_CRYSTAL_ENTITY.get(), BloodCrystalEntityRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.CURSED_CAT_DOLL_ENTITY.get(), CursedCatDollEntityRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.SHU_RINO_KEN_ENTITY.get(), ShuRinoKenEntityRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.TAIL_BOBBER_ENTITY.get(), TailBobberRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.HIRENADE_GG_ENTITY.get(), HirenadeGGEntityRenderer::new);
-        RenderingRegistry.registerEntityRenderingHandler(EntityRegistry.LEVIY_BEAM_ENTITY.get(), LeviyBeamEntityRenderer::new);
-
-        event.enqueueWork(() -> ClientRegistry.bindTileEntityRenderer(TileEntityRegistry.POINTS_STORE.get(), PointsStoreTileEntityRenderer::new));
 
         event.enqueueWork(() -> RenderTypeLookup.setRenderLayer(BlockRegistry.HARANO_SAPLING.get(), RenderType.getCutout()));
         event.enqueueWork(() -> RenderTypeLookup.setRenderLayer(BlockRegistry.HARANO_DOOR.get(), RenderType.getCutout()));
         event.enqueueWork(() -> RenderTypeLookup.setRenderLayer(BlockRegistry.HARANO_TRAPDOOR.get(), RenderType.getCutout()));
-        event.enqueueWork(() -> RenderTypeLookup.setRenderLayer(BlockRegistry.UNI_MILLET_BLOCK.get(), RenderType.getCutout()));
-        event.enqueueWork(() -> RenderTypeLookup.setRenderLayer(BlockRegistry.JELLYFISH_BOTTLE.get(), RenderType.getTranslucent()));
     }
 }
